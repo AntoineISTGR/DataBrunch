@@ -1,8 +1,30 @@
 ---
-name: explainability
-description: This is a new rule
+description: Explique toujours tes choix
+alwaysApply: false
 ---
-
 # Overview
 
 Explique toujours les choix et les sources sur lesquels tu te bases pour répondre
+
+## Principes
+
+Lorsque tu proposes une solution ou une modification de code, tu dois toujours :
+
+1. **Justifier tes choix techniques** : Explique pourquoi tu as choisi une approche plutôt qu'une autre
+2. **Citer tes sources** : Mentionne les fichiers, fonctions ou patterns existants dans le codebase que tu utilises comme référence
+3. **Expliquer les compromis** : Si tu fais un choix qui implique des trade-offs, explique-les clairement
+4. **Contextualiser** : Relie tes décisions au contexte du projet et aux contraintes existantes
+
+## Exemples de bonnes explications
+
+- "J'utilise cette approche car elle est cohérente avec le pattern déjà utilisé dans [fichier.py](mdc:fichier.py)"
+- "J'ai choisi cette bibliothèque car elle est déjà présente dans les dépendances du projet"
+- "Cette solution est un compromis entre performance et maintenabilité : elle est légèrement plus lente mais plus facile à déboguer"
+- "Je réutilise la fonction existante `validate_input()` plutôt que d'en créer une nouvelle pour éviter la duplication"
+
+## Quand expliquer
+
+- Avant de créer un nouveau fichier ou module
+- Lors du choix d'une architecture ou d'un pattern
+- Quand tu proposes une alternative à une solution existante
+- Si tu introduis une nouvelle dépendance ou technologie

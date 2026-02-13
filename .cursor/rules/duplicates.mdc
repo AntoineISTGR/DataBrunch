@@ -1,8 +1,43 @@
 ---
-name: duplicates
-description: This is a new rule
+description: Limiter le nombre de fichiers
+alwaysApply: false
 ---
-
 # Overview
 
-Limiter le nombre de fichiers : toujours vérifier qu’une fonction n’existe pas déjà lorsque tu génères du code
+Toujours vérifier qu'une fonction n'existe pas déjà lorsque tu génères du code
+
+## Principes
+
+Avant de créer du nouveau code, tu dois systématiquement :
+
+1. **Chercher dans le codebase** : Utilise les outils de recherche pour vérifier si une fonctionnalité similaire existe déjà
+2. **Réutiliser plutôt que recréer** : Privilégie toujours la réutilisation du code existant
+3. **Consolider plutôt que dupliquer** : Si une fonctionnalité existe mais n'est pas parfaite, améliore-la plutôt que d'en créer une nouvelle
+4. **Vérifier les utilitaires** : Cherche dans les modules d'utilitaires, helpers, ou fichiers communs
+
+## Où chercher
+
+- **Modules utilitaires** : Fichiers comme `utils.py`, `helpers.py`, `common.py`
+- **Fichiers similaires** : Si tu travailles sur un module, vérifie les autres modules du même type
+- **Base de code existante** : Utilise la recherche sémantique pour trouver des patterns similaires
+- **Imports existants** : Regarde quelles bibliothèques et fonctions sont déjà utilisées dans le projet
+
+## Comment vérifier
+
+1. **Recherche par nom** : Cherche des noms de fonctions ou classes similaires
+2. **Recherche sémantique** : Utilise la recherche sémantique pour trouver des fonctionnalités équivalentes
+3. **Examiner les imports** : Regarde les imports dans les fichiers similaires pour voir quelles fonctions sont disponibles
+4. **Lire la documentation** : Vérifie les docstrings et commentaires pour comprendre ce qui existe déjà
+
+## Actions à prendre
+
+- **Si une fonction existe** : Réutilise-la directement ou étends-la si nécessaire
+- **Si une fonction similaire existe** : Considère la refactorisation pour créer une fonction générique réutilisable
+- **Si rien n'existe** : Alors seulement, crée une nouvelle fonction, mais place-la dans le bon module existant si possible
+- **Avant de créer un nouveau fichier** : Vérifie s'il existe déjà un fichier approprié où ajouter cette fonctionnalité
+
+## Exemples
+
+- Au lieu de créer `validate_email()` dans un nouveau fichier, vérifie si une fonction de validation existe déjà dans `src/utils/validation.py`
+- Si tu dois parser du JSON, vérifie si le projet a déjà une fonction `parse_json()` ou utilise une bibliothèque standard
+- Avant de créer un nouveau helper, vérifie les fichiers `helpers.py` ou `utils.py` existants
