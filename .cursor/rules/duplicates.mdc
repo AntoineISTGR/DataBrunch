@@ -1,0 +1,8 @@
+---
+name: duplicates
+description: This is a new rule
+---
+
+# Overview
+
+Limiter le nombre de fichiers : toujours vérifier qu’une fonction n’existe pas déjà lorsque tu génères du code
