@@ -48,6 +48,7 @@ async def lifespan(app: FastAPI):
             "https://www.theverge.com/rss/index.xml",
             "https://feeds.feedburner.com/oreilly/radar",
             "https://www.wired.com/feed/rss",
+            "https://www.technologyreview.com/feed/",
         ]
 
     _news_service = NewsService(cache=_cache, rss_feed_urls=rss_feed_urls)
